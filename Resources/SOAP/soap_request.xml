@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+  <S:Body>
+    <ns2:creditScore xmlns:ns2="http://service.web.credit.bank.org/">
+      <ssn>010203-1234</ssn>
+    </ns2:creditScore>
+  </S:Body>
+</S:Envelope>
