@@ -69,6 +69,7 @@ Vagrant.configure("2") do |config|
     sudo sh -c "echo 'LC_ALL=en_US.UTF-8\nLC_CTYPE=en_US.UTF-8' >> /etc/environment"
     echo ". $HOME/.bashrc" >> $HOME/.bash_profile
 
+    sudo apt-get install -y unzip
     sudo apt-get install -y g++
     sudo apt-get install -y swig
     sudo apt-get install -y python-dev
@@ -88,13 +89,15 @@ Vagrant.configure("2") do |config|
     sudo tar -C /usr/local -xzf go1.8.3.linux-amd64.tar.gz
     echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bash_profile
     echo "export GOPATH=/go_projects" >> $HOME/.bash_profile
+    source $HOME/.bash_profile
 
     wget https://bintray.com/artifact/download/groovy/maven/apache-groovy-binary-2.4.12.zip
     unzip apache-groovy-binary-2.4.12.zip
 
-    echo "export GROOVY_HOME=/home/vagrant/groovy-2.4.12/" >> $HOME/.bash_profile
-    export GROOVY_HOME=/home/vagrant/groovy-2.4.12/
+    echo "export GROOVY_HOME=/home/vagrant/groovy-2.4.12" >> $HOME/.bash_profile
+    export GROOVY_HOME=/home/vagrant/groovy-2.4.12
     echo "export PATH=$PATH:$GROOVY_HOME/bin" >> $HOME/.bash_profile
+    source $HOME/.bash_profile
 
     sudo apt-get install -y gnat
     sudo apt-get install -y f2c fort77
